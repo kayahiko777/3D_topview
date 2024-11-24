@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 59573b088aaea0442bf29e0a0e9d1339, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -319,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 710027676}
   - component: {fileID: 710027675}
+  - component: {fileID: 710027677}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -381,6 +382,22 @@ Transform:
   - {fileID: 1403147131}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &710027677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710027674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18ffa83c36b93e4585a263873a9ef21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObj: {fileID: 1720213530}
+  cameraRotateSpeed: 80
+  maxLimit: 50
+  minLimit: 25
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +677,7 @@ PrefabInstance:
       addedObject: {fileID: 1720213531}
     - targetCorrespondingSourceObject: {fileID: 100218, guid: 5d037042d9a55c74981b5d7a00780227, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1720213533}
+      addedObject: {fileID: 1720213541}
   m_SourcePrefab: {fileID: 100100000, guid: 5d037042d9a55c74981b5d7a00780227, type: 3}
 --- !u!1 &1720213530 stripped
 GameObject:
@@ -717,7 +734,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1720213533
+--- !u!4 &1720213540 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400218, guid: 5d037042d9a55c74981b5d7a00780227, type: 3}
+  m_PrefabInstance: {fileID: 1720213529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1720213541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -726,15 +748,67 @@ MonoBehaviour:
   m_GameObject: {fileID: 1720213530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a23ee8f32bb3b904fbe53270cfa0df29, type: 3}
+  m_Script: {fileID: 11500000, guid: 10575b01ee210e1448492cf59cd9d69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
---- !u!4 &1720213540 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400218, guid: 5d037042d9a55c74981b5d7a00780227, type: 3}
-  m_PrefabInstance: {fileID: 1720213529}
-  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1819653710
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2758808173843430218, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.28281
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758808173843430218, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.7287307
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758808173843430218, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 57.00721
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758808173843430218, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758808173843430218, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758808173843430218, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758808173843430218, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758808173843430218, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758808173843430218, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758808173843430218, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243314962588885488, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
+      propertyPath: m_Name
+      value: PT_Wooden_Bridge_02
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 46f8d17b9eeef754ebc1008196f84bdd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -744,3 +818,4 @@ SceneRoots:
   - {fileID: 70766972}
   - {fileID: 1720213529}
   - {fileID: 710027676}
+  - {fileID: 1819653710}
