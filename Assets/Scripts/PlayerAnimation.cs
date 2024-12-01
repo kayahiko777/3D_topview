@@ -2,6 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// プレイヤー用のキャラクターのアニメの種類
+/// </summary>
+public enum PlayerAnimationState
+{
+    Attack,
+    Down,
+    Damage,
+    Jump,
+    Speed,
+    Idle,
+    Clear
+}
+
+
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator anim;
@@ -38,6 +53,15 @@ public class PlayerAnimation : MonoBehaviour
         anim.SetBool(nextAnimState.ToString(), isChange);
     }
 
+    /// <summary>
+    /// Trigger 型のパラメータのアニメの再生
+    /// 連続攻撃・ジャンプなど
+    /// </summary>
+    /// <param name="nextAnimState"></param>
+    public void ChangeAnimationFromTrigger(PlayerAnimationState nextAnimState)
+    {
+        anim.SetTrigger(nextAnimState.ToString());
+    }
 
     /// <summary>
     /// Animator コンポーネントの取得用
