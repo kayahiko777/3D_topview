@@ -33,12 +33,12 @@ public class PlayerAnimation : MonoBehaviour
     /// 移動アニメと速度の同期
     /// </summary>
     /// <param name="nextState"></param>
-    /// <param name="amount"></param>
-    public void ChangeAnimationFromFloat(PlayerAnimationState nextAnimState, float amount)
+    /// <param name="speed"></param>
+    public void ChangeAnimationFromFloat(PlayerAnimationState nextAnimState, float speed)
     {
 
         // Locomotion の parameter にチェックを入れて Speed の parameter と連動させる
-        anim.SetFloat(nextAnimState.ToString(), amount);
+        anim.SetFloat(nextAnimState.ToString(), speed);
     }
 
 

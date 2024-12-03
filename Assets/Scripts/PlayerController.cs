@@ -76,13 +76,13 @@ public class PlayerController : MonoBehaviour
             // 待機アニメから移動アニメへ遷移
             playerAnim.ChangeAnimationFromFloat(PlayerAnimationState.Speed, lookDirection.sqrMagnitude);
 
-            Debug.Log("移動アニメ再生 : " + lookDirection.sqrMagnitude);
+            //Debug.Log("移動アニメ再生 : " + lookDirection.sqrMagnitude);
         }
         else
         {
             // 移動していない場合、移動アニメからら待機アニメへ遷移
             playerAnim.ChangeAnimationFromFloat(PlayerAnimationState.Speed, 0);
-            Debug.Log("停止");
+           // Debug.Log("停止");
         }
     }
 }

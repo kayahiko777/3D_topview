@@ -39,7 +39,7 @@ public class PlayerJump : MonoBehaviour
 
         if(Input.GetButtonDown("Jump"))
         {
-            Debug.Log("ジャンプ");
+           // Debug.Log("ジャンプ");
             Jump();
         }
     }
