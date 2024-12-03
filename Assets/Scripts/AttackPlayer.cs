@@ -42,4 +42,25 @@ public class AttackPlayer : MonoBehaviour
 
         Debug.Log(capsuleCol.enabled);
     }
+
+    // 武器のコライダーによる侵入判定
+    private void OnTriggerEnter(Collider other)
+    {
+        // 武器にコライダーがアタッチされていない場合には、この判定処理を行わない
+        if (!capsuleCol.enabled)
+        {
+            return;
+        }
+
+        // 武器のコライダーが、別のコライダーに侵入したとき
+　　　　// そのコライダーのゲームオブジェクトに Health スクリプトがアタッチされていれば = すなわち、敵のゲームオブジェクトなら
+        if (other.gameObject.TryGetComponent(out Health health))
+        {
+            // 敵の Hp を減少させる
+            health.TakeDamage(-attackPower);
+
+            Debug.Log("攻撃ヒット");
+        }
+       
+    }
 }
