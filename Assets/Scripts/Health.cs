@@ -1,11 +1,17 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class Health : MonoBehaviour
 {
     [SerializeField]
     private int maxHp;
     private int currentHp;
+
+    [SerializeField]
+    private Slider healthSlider;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +23,9 @@ public class Health : MonoBehaviour
     {
         maxHp = initialHp;
         currentHp = maxHp;
+
+        healthSlider.maxValue = currentHp;
+        healthSlider.value = currentHp;
     }
 
     /// <summary>
@@ -26,6 +35,9 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHp = Mathf.Max(currentHp - damage, 0);
+
+        // HPゲージをアニメさせて変動させる
+        healthSlider.DOValue(currentHp, 0.5f);
         // Hp の計算と生存確認
         if (currentHp <= 0)
         {
